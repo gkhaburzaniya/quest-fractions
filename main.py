@@ -13,8 +13,12 @@ def compute(equation):
     answer = None
     if operator == '+':
         answer = num1 + num2
+    elif operator == '-':
+        answer = num1 - num2
     elif operator == '*':
         answer = num1 * num2
+    elif operator == '/':
+        answer = num1 / num2
     if answer is None:
         return f"Invalid operator: {operator}"
 

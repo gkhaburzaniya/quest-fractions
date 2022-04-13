@@ -56,5 +56,31 @@ class TestAddition(unittest.TestCase):
         self.assertEqual(main.compute('2_3/8 + 9/8'), '3_1/2')
 
 
+class TestSubtraction(unittest.TestCase):
+    def test_one_minus_one(self):
+        self.assertEqual(main.compute('1 - 1'), '0')
+
+    def test_one_third_minus_two_thirds(self):
+        self.assertEqual(main.compute('1/3 - 2/3'), '-1/3')
+
+    def test_one_half_minus_one_third(self):
+        self.assertEqual(main.compute('1/2 - 1/3'), '1/6')
+
+    def test_one_half_minus_two_thirds(self):
+        self.assertEqual(main.compute('1/2 - 2/3'), '-1/6')
+
+    def test_zero_minus_zero(self):
+        self.assertEqual(main.compute('0 - 0'), '0')
+
+    def test_negative_one_minus_one_third(self):
+        self.assertEqual(main.compute('-1 - 1/3'), '-1_1/3')
+
+    def test_negative_two_minus_one_third(self):
+        self.assertEqual(main.compute('-2 - 1/3'), '-2_1/3')
+
+    def test_two_and_three_eights_minus_nine_eights(self):
+        self.assertEqual(main.compute('2_3/8 - 9/8'), '1_1/4')
+
+
 if __name__ == '__main__':
     unittest.main()
