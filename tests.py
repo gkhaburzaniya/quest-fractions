@@ -30,6 +30,29 @@ class TestParseNum(unittest.TestCase):
         self.assertRaises(ZeroDivisionError, main.parse_num, '1_1/0')
 
 
+class TestFormatAnswer(unittest.TestCase):
+    def test_zero(self):
+        self.assertEqual(main.format_answer(Fraction(0, 1)), '0')
+
+    def test_one(self):
+        self.assertEqual(main.format_answer(Fraction(1, 1)), '1')
+
+    def test_one_third(self):
+        self.assertEqual(main.format_answer(Fraction(1, 3)), '1/3')
+
+    def test_one_and_one_third(self):
+        self.assertEqual(main.format_answer(Fraction(4, 3)), '1_1/3')
+
+    def test_negative_one(self):
+        self.assertEqual(main.format_answer(Fraction(-1, 1)), '-1')
+
+    def test_negative_one_third(self):
+        self.assertEqual(main.format_answer(Fraction(-1, 3)), '-1/3')
+
+    def test_negative_one_and_one_third(self):
+        self.assertEqual(main.format_answer(Fraction(-4, 3)), '-1_1/3')
+
+
 class TestAddition(unittest.TestCase):
     def test_one_plus_one(self):
         self.assertEqual(main.compute('1 + 1'), '2')

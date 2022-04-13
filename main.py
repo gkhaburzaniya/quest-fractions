@@ -1,8 +1,19 @@
 from fractions import Fraction
 
 
+INTRO = """
+Legal operators are be *, /, +, - (multiply, divide, add, subtract)
+
+Separate operands and operators by one or more spaces
+
+Write mixed numbers as whole_numerator/denominator. e.g. "3_1/4"
+
+Improper fractions and whole numbers are also allowed as operands 
+"""
+
+
 def main():
-    print("What fractions do you wish to compute? For Example: '1/2 * 3_3/4'")
+    print(INTRO)
     equation = input()
     print(compute(equation))
 
