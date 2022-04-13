@@ -111,5 +111,37 @@ class TestMultiplication(unittest.TestCase):
         self.assertEqual(main.compute('1/2 * 3_3/4'), '1_7/8')
 
 
+class TestDivision(unittest.TestCase):
+    def test_one_over_one(self):
+        self.assertEqual(main.compute('1 / 1'), '1')
+
+    def test_one_third_over_two_thirds(self):
+        self.assertEqual(main.compute('1/3 / 2/3'), '1/2')
+
+    def test_one_half_over_one_third(self):
+        self.assertEqual(main.compute('1/2 / 1/3'), '1_1/2')
+
+    def test_one_half_over_two_thirds(self):
+        self.assertEqual(main.compute('1/2 / 2/3'), '3/4')
+
+    def test_zero_over_zero(self):
+        self.assertRaises(ZeroDivisionError, main.compute, '0 / 0')
+
+    def test_one_over_zero(self):
+        self.assertRaises(ZeroDivisionError, main.compute, '1 / 0')
+
+    def test_zero_over_one(self):
+        self.assertEqual(main.compute('0 / 1'), '0')
+
+    def test_negative_one_over_one_third(self):
+        self.assertEqual(main.compute('-1 / 1/3'), '-3')
+
+    def test_negative_two_over_one_third(self):
+        self.assertEqual(main.compute('-2 / 1/3'), '-6')
+
+    def test_one_half_over_three_and_three_quarters(self):
+        self.assertEqual(main.compute('1/2 / 3_3/4'), '2/15')
+
+
 if __name__ == '__main__':
     unittest.main()
