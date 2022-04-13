@@ -15,7 +15,10 @@ Improper fractions and whole numbers are also allowed as operands
 def main():
     print(INTRO)
     equation = input()
-    print(compute(equation))
+    while equation != 'q':
+        print(compute(equation))
+        print("Another one? type 'q' to exit")
+        equation = input()
 
 
 def compute(equation):
