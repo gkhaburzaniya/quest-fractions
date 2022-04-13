@@ -8,7 +8,9 @@ Separate operands and operators by one or more spaces
 
 Write mixed numbers as whole_numerator/denominator. e.g. "3_1/4"
 
-Improper fractions and whole numbers are also allowed as operands 
+Improper fractions and whole numbers are also allowed as operands
+
+Example: 5_2/3 + 3_2/3
 """
 
 
