@@ -4,6 +4,11 @@ from fractions import Fraction
 import main
 
 
+class TestParseEquation(unittest.TestCase):
+    def test_multiple_spaces(self):
+        self.assertEqual(main.parse_equation('1  + 2'), ['1', '+', '2'])
+
+
 class TestParseNum(unittest.TestCase):
     def test_one(self):
         self.assertEqual(main.parse_num('1'), Fraction(1, 1))

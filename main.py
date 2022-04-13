@@ -2,7 +2,7 @@ from fractions import Fraction
 
 
 INTRO = """
-Legal operators are be *, /, +, - (multiply, divide, add, subtract)
+Legal operators are *, /, +, - (multiply, divide, add, subtract)
 
 Separate operands and operators by one or more spaces
 
@@ -19,7 +19,7 @@ def main():
 
 
 def compute(equation):
-    num1, operator, num2 = equation.split(' ')
+    num1, operator, num2 = parse_equation(equation)
     num1, num2 = parse_num(num1), parse_num(num2)
     answer = None
     if operator == '+':
@@ -34,6 +34,12 @@ def compute(equation):
         return f"Invalid operator: {operator}"
 
     return format_answer(answer)
+
+
+def parse_equation(equation):
+    return [
+        word for word in equation.split(' ') if word != ''
+    ]
 
 
 def parse_num(num):
